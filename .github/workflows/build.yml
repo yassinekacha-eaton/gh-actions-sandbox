@@ -38,10 +38,11 @@ jobs:
 
     - name: SonarCloud Scan
       run: >
-        mvn -B -U 
+        mvn -B -U
         -Dsonar.host.url=${{ vars.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+        -Dsonar.projectKey=${{ secrets.SONAR_ORGANIZATION }}_gh-actions-sandbox
         clean install sonar:sonar
 
     - name: 'Upload Artifacts'

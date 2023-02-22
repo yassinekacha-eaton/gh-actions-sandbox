@@ -37,7 +37,12 @@ jobs:
         fail-on-error: true
 
     - name: SonarCloud Scan
-      run: mvn -B -U sonar:sonar
+      run: >
+        mvn -B -U 
+        -Dsonar.host.url=${{ env.SONAR_URL }}
+        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} 
+        clean install sonar:sonar
 
     - name: 'Upload Artifacts'
       uses: actions/upload-artifact@v3

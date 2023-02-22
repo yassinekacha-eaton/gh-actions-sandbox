@@ -40,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         path: '**/target/*.jar'
-        retention: 90
+        retention-days: 90

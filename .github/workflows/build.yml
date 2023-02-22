@@ -40,9 +40,9 @@ jobs:
       run: >
         mvn -B -U
         -Dsonar.host.url=${{ vars.SONAR_URL }}
+        -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+        -Dsonar.projectKey=${{ vars.SONAR_ORGANIZATION }}_gh-actions-sandbox
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-        -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-        -Dsonar.projectKey=${{ secrets.SONAR_ORGANIZATION }}_gh-actions-sandbox
         clean install sonar:sonar
 
     - name: 'Upload Artifacts'

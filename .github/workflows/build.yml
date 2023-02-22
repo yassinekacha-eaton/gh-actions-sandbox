@@ -22,7 +22,7 @@ jobs:
         cache: maven
 
     - name: Build
-      run: mvn -B -U -DskipTtests=true package
+      run: mvn -B -U -DskipTests=true package
 
     - name: Test
       run: mvn -B -U -Dmaven.test.failure.ignore=true test

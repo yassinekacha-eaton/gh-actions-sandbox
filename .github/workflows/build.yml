@@ -37,10 +37,7 @@ jobs:
         fail-on-error: true
 
     - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@v1.8
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: mvn -B -U sonar:sonar
 
     - name: 'Upload Artifacts'
       uses: actions/upload-artifact@v3

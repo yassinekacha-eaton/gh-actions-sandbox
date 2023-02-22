@@ -24,10 +24,10 @@ jobs:
     - name: Build
       run: mvn -B -U -DskipTests=true package
 
-    - name: Test
+    - name: Tests
       run: mvn -B -U -Dmaven.test.failure.ignore=true test
 
-    - name: Test Report
+    - name: Tests Report
       uses: dorny/test-reporter@v1.6.0
       if: always()
       with:
@@ -35,3 +35,9 @@ jobs:
         path: '**/target/surefire-reports/TEST-*.xml'
         reporter: 'java-junit'
         fail-on-error: true
+
+    - name: 'Upload Artifacts'
+      uses: actions/upload-artifact@v3
+      with:
+        path: '**/target/*.jar'
+        retention-days: 90

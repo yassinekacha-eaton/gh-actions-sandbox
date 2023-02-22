@@ -39,7 +39,7 @@ jobs:
     - name: SonarCloud Scan
       run: >
         mvn -B -U 
-        -Dsonar.host.url=$SONAR_URL
+        -Dsonar.host.url=${{ vars.SONAR_URL }}
         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
         clean install sonar:sonar

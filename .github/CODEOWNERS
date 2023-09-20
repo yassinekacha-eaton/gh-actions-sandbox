@@ -1,4 +1,4 @@
-docs/*  @papaissad-sandbox-org/doc-reviewers
+docs/*  @papaissad-sandbox-org/doc-maintainers
 .github/workflows/ @papaissad-sandbox-org/techleads
 *.java @papaissad-sandbox-org/developers-java
 *.js @papaissad-sandbox-org/developers-nodejs
